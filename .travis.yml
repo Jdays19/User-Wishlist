@@ -1,21 +1,18 @@
-language:python 
-
-services:
+language: python
+services: 
   - docker
-
-after_success:
-  - docker build -t Jdays19/user-wishlist .
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push Jdays19/user-wishlist 
-
-deploy:
+after_success: 
+  - "docker build -t Jdays19/user-wishlist ."
+  - "echo \"$DOCKER_PASSWORD\" | docker login -u \"$DOCKER_ID\" --password-stdin"
+  - "docker push Jdays19/user-wishlist"
+deploy: 
+  access_key_id: $AWS_ACCESS_KEY
+  app: "Jocelyn's User Wishlist"
+  bucket_name: multi-container-wishlist-app-jd
+  bucket_path: docker
+  env: Jocelynsuserwishlist-env
   provider: elasticbeanstalk
   region: us-east-1
-  app: Jocelyn's User Wishlist
-  env: Jocelynsuserwishlist-env
-  access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket_name: "multi-container-wishlist-app-jd"
-  bucket_path: "docker"
-  on:
+  true: 
     branch: multi-cont-app
