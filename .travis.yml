@@ -1,5 +1,4 @@
 language: python
-install: pip --version
 services: 
   - docker
 after_success: 
