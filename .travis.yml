@@ -8,7 +8,7 @@ after_success:
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  - docker push Jdays19/user-wishlist
+  - docker push Jdays19/user-wishlist .
 
 deploy:
   provider: elasticbeanstalk
