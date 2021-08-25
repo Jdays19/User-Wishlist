@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://hello_flask:hello_flask@db:5432/hello_flask_dev'
 
-from models import db, UserFavs
+from app.models import db, UserFavs
 
 db.init_app(app)
 with app.app_context():
