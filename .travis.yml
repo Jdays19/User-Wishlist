@@ -1,5 +1,5 @@
 language: python
-install: pip install --upgrade pip 
+install: skip
 services: 
   - docker
 script:
