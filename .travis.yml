@@ -12,7 +12,7 @@ after_success:
 
 deploy:
   provider: elasticbeanstalk
-  region: us-east-2
+  region: us-east-1
   app: Jocelyn's User Wishlist
   env: Jocelynsuserwishlist-env
   access_key_id: $AWS_ACCESS_KEY
