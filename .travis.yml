@@ -1,13 +1,11 @@
-language:generic
+language:python 
 
 services:
   - docker
 
 after_success:
   - docker build -t Jdays19/user-wishlist .
-
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
   - docker push Jdays19/user-wishlist 
 
 deploy:
