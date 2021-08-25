@@ -2,6 +2,7 @@ language: python
 services: 
   - docker
 after_success: 
+  - "echo testing && ls"
   - "docker build -t jdiaz67/user-wishlist ."
   - "echo \"$DOCKER_PASSWORD\" | docker login -u \"$DOCKER_ID\" --password-stdin"
   - "docker push jdiaz67/user-wishlist"
