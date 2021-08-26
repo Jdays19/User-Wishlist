@@ -81,8 +81,6 @@ def get():
         red.hset(username, "food", record.food)
         return render_template('index.html', get=1, msg="(From Database)",username=username, place=record.place, food=record.food)
     return render_template('index.html',get=1, msg="(From Redis)", username=username, place=user_data[b'place'].decode('utf-8'), food=user_data[b'food'].decode('utf-8'))
-
-
 # if __name__ == "__main__":
 #     # Only for debugging while developing
 #     app.run(host='0.0.0.0', debug=True, port=80)
