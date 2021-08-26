@@ -12,5 +12,5 @@ class UserFavs(db.Model):
         self.place=place
         self.food=food
 
-    def __repr__(self):
+    def __repr__(self): #prints out representation of object, 
         return f'<User-Place-Food : {self.username}-{self.place}-{self.food}'

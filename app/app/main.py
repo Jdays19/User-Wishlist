@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import redis
+import redis # in memory data structure, key-value db
 
 app = Flask(__name__)
 
